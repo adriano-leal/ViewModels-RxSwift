@@ -7,24 +7,32 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SayHelloViewController: UIViewController {
+    typealias ViewModel = SayHelloViewModel
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var validateButton: UIButton!
+    @IBOutlet weak var greetingLabel: UILabel!
+    
+    private let viewModel = ViewModel()
+    private let disposeBag = DisposeBag()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        bindViewModel()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func bindViewModel() {
+        let inputs = SayHelloViewModel.Input(name: nameTextField.rx.text.orEmpty.asObservable(),
+                                             validate: validateButton.rx.tap.asObservable())
+        
+        let outputs = viewModel.transform(input: inputs)
+        outputs.greeting
+            .drive(greetingLabel.rx.text)
+            .disposed(by: disposeBag)
     }
-    */
-
 }

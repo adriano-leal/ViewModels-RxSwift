@@ -6,4 +6,11 @@
 //  Copyright © 2020 Adriano Ramos. All rights reserved.
 //
 
-import Foundation
+
+protocol ViewModelType {
+    
+    associatedtype Input
+    associatedtype Output
+    
+    func transform(input: Input) -> Output
+}

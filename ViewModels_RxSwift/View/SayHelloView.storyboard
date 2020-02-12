@@ -1,7 +1,58 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="idK-2u-Tjx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Say Hello View Controller-->
+        <scene sceneID="Vnt-k8-iGW">
+            <objects>
+                <viewController id="idK-2u-Tjx" customClass="SayHelloViewController" customModule="ViewModels_RxSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="meA-2Y-5aR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="x8D-r3-qtR">
+                                <rect key="frame" x="16" y="60" width="382" height="142"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5p-Kc-EM6">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gch-Hs-cXr">
+                                        <rect key="frame" x="0.0" y="54" width="382" height="34"/>
+                                        <state key="normal" title="Validate"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wo-04-lfY">
+                                        <rect key="frame" x="0.0" y="108" width="382" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5V7-Ph-guO" firstAttribute="trailing" secondItem="x8D-r3-qtR" secondAttribute="trailing" constant="16" id="3aT-rV-qce"/>
+                            <constraint firstItem="x8D-r3-qtR" firstAttribute="leading" secondItem="5V7-Ph-guO" secondAttribute="leading" constant="16" id="UyA-Qi-5oa"/>
+                            <constraint firstItem="x8D-r3-qtR" firstAttribute="top" secondItem="5V7-Ph-guO" secondAttribute="top" constant="16" id="vXQ-D8-ejX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5V7-Ph-guO"/>
+                    </view>
+                    <connections>
+                        <outlet property="greetingLabel" destination="5Wo-04-lfY" id="Zt5-yI-wMh"/>
+                        <outlet property="nameTextField" destination="X5p-Kc-EM6" id="ika-eh-AsQ"/>
+                        <outlet property="validateButton" destination="gch-Hs-cXr" id="KL4-aO-OC0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEf-wb-ynh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-136.23188405797103" y="-87.053571428571431"/>
+        </scene>
+    </scenes>
 </document>
